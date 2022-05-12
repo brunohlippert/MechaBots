@@ -6,4 +6,4 @@ func _ready() -> void:
 
 
 func _on_Entulho_body_entered(body: Node) -> void:
-	print("entrou")
+	get_tree().change_scene("res://Scenes/map/Batalha.tscn")

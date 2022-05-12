@@ -3,7 +3,6 @@ extends KinematicBody2D
 export var SPEED = 250
 var velocity = Vector2()
 
-onready var target = position
 
 func get_input():
 	var d := Vector2.ZERO
@@ -17,3 +16,4 @@ func _physics_process(delta):
 
 func move8way(input: Vector2, delta: float) -> void:
 	position += input * SPEED * delta
+	

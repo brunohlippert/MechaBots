@@ -6,4 +6,4 @@ func _ready() -> void:
 
 
 func _on_Button_pressed() -> void:
-	get_tree().change_scene("res://Scenes/Map.tscn")
+	get_tree().change_scene("res://Scenes/map/Map.tscn")
