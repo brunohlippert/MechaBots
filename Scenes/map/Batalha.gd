@@ -1,24 +1,26 @@
 extends Node2D
 
-
-var isPlayerTurn := true
-
 func _ready() -> void:
-	pass # Replace with function body.
+	$Robot.setMyTurn(true)
 
 func _on_Attack_pressed() -> void:
 	$AtacksMenu/Attack.disabled = true;
 	$Enemy.getDamage($Robot.damage)  
-	checkBattleEnded()
-	isPlayerTurn = not isPlayerTurn
+	$Robot.setMyTurn(false)
 
 func _process(delta: float) -> void:
-	if not isPlayerTurn:
+	# Depois de todas as animacoes de dano
+	if not $Enemy.isGettingDamage and not $Robot.isGettingDamage:
+		checkBattleEnded()
+	
+	# Vez do inimigo
+	if $Enemy.isMyTurn and not $Enemy.isGettingDamage:
 		$Robot.getDamage($Enemy.damage)
-		isPlayerTurn = not isPlayerTurn
+		$Enemy.setMyTurn(false)
+		
+	if $Robot.isMyTurn:
 		$AtacksMenu/Attack.disabled = false;
 		
-
 func checkBattleEnded():
 	if($Enemy.life <= 0 || $Robot.life <= 0):
 		get_tree().change_scene("res://Scenes/map/Map.tscn")
