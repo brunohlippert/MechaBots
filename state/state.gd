@@ -1,6 +1,6 @@
 extends Node
 
-var robotLevel := 1
+var robotLevel := 2
 
 func _ready() -> void:
 	pass # Replace with function body.

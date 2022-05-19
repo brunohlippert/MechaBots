@@ -1,6 +1,8 @@
 extends Node2D
 
 func _ready() -> void:
+	$Robot.init($"/root/State".robotLevel)
+	$Enemy.init($"/root/State".robotLevel)
 	$Robot.setMyTurn(true)
 
 func _on_Attack_pressed() -> void:

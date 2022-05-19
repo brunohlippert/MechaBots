@@ -1,16 +1,17 @@
 extends KinematicBody2D
 
-export var life := 100
-export var damage := 25
+var life
+var damage
+var currentLvl
 
 var levels := {
 	1: {
-		life: 100,
-		damage: 25		
+		"life": 100,
+		"damage": 25		
 	},
 	2: {
-		life: 150,
-		damage: 30		
+		"life": 150,
+		"damage": 30		
 	}
 }
 
@@ -21,8 +22,11 @@ onready var animationPlayer := $AnimationPlayer
 onready var turnArrow := $TurnArrow
 
 func _ready() -> void:
-	
 	turnArrow.visible = false
+	
+func init(lvl: int):
+	damage = levels[lvl].damage
+	life = levels[lvl].life
 	$Life.text = str(life)
 	
 func setMyTurn(value: bool):
