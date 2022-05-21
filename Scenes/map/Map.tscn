@@ -13,7 +13,16 @@ tile_data = PoolIntArray( 0, 2, 1, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 
 tile_data = PoolIntArray( 262152, 3, 0, 262163, 3, 0, 524309, 3, 0, 589851, 3, 0, 655363, 3, 0, 983041, 3, 0, 1048590, 3, 0, 1048601, 3, 0 )
 
 [node name="Entulho" parent="." instance=ExtResource( 1 )]
-position = Vector2( 298, 474 )
+position = Vector2( 323, 481 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 128, 485 )
+
+[node name="HUD" type="Node2D" parent="."]
+
+[node name="bagButton" type="Button" parent="HUD"]
+margin_left = 937.0
+margin_top = 5.0
+margin_right = 1015.0
+margin_bottom = 41.0
+text = "BAG"

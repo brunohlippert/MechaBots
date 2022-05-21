@@ -6,7 +6,7 @@ func _ready() -> void:
 	$Robot.setMyTurn(true)
 
 func _on_Attack_pressed() -> void:
-	$AtacksMenu/Attack.disabled = true;
+	$Attack.disabled = true;
 	$Enemy.getDamage($Robot.damage)  
 	$Robot.setMyTurn(false)
 
@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 		$Enemy.setMyTurn(false)
 		
 	if $Robot.isMyTurn:
-		$AtacksMenu/Attack.disabled = false;
+		$Attack.disabled = false;
 		
 func checkBattleEnded():
 	if($Enemy.life <= 0 || $Robot.life <= 0):

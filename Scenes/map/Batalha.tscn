@@ -1,51 +1,53 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scenes/characters/robots/Cannon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/characters/robots/Robot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/map/Batalha.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/characters/robots/Fighter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tiles/Battle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/battleSprites/background1.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/battleSprites/background3.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/battleSprites/background2.png" type="Texture" id=7]
 
 [node name="Batalha" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="AtacksMenu" type="ColorRect" parent="."]
-margin_top = 485.0
-margin_right = 1024.0
-margin_bottom = 600.0
-color = Color( 0.415686, 0.407843, 0.407843, 1 )
+[node name="Background" type="Node2D" parent="."]
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="Attack" type="Button" parent="AtacksMenu"]
+[node name="Background1" type="Sprite" parent="Background"]
+position = Vector2( 513, 244 )
+scale = Vector2( 1.07083, 1.0125 )
+texture = ExtResource( 5 )
+
+[node name="Background2" type="Sprite" parent="Background"]
+position = Vector2( 513.5, 234 )
+scale = Vector2( 1.06354, 0.970833 )
+texture = ExtResource( 7 )
+
+[node name="Background3" type="Sprite" parent="Background"]
+position = Vector2( 513.5, 235.5 )
+scale = Vector2( 1.06562, 0.985417 )
+texture = ExtResource( 6 )
+
+[node name="ChaoBatalha" parent="." instance=ExtResource( 4 )]
+scale = Vector2( 1.5, 1.5 )
+tile_data = PoolIntArray( 524288, 1, 0, 524289, 5, 0, 524290, 6, 0, 524291, 4, 0, 524292, 6, 0, 524293, 1, 0, 524294, 6, 0, 524295, 5, 0, 524296, 1, 0, 524297, 6, 0, 524298, 4, 0, 524299, 1, 0, 524300, 4, 0, 524301, 5, 0, 524302, 6, 0, 524303, 5, 0, 524304, 1, 0, 524305, 6, 0, 524306, 5, 0, 524307, 1, 0, 524308, 4, 0, 524309, 14, 0, 589824, 11, 0, 589825, 13, 0, 589826, 9, 0, 589827, 13, 0, 589828, 13, 0, 589829, 12, 0, 589830, 13, 0, 589831, 9, 0, 589832, 13, 0, 589833, 9, 0, 589834, 9, 0, 589835, 13, 0, 589836, 9, 0, 589837, 13, 0, 589838, 8, 0, 589839, 13, 0, 589840, 13, 0, 589841, 12, 0, 589842, 8, 0, 589843, 9, 0, 589844, 13, 0, 589845, 13, 0, 655360, 13, 0, 655361, 11, 0, 655362, 13, 0, 655363, 13, 0, 655364, 13, 0, 655365, 13, 0, 655366, 13, 0, 655367, 13, 0, 655368, 13, 0, 655369, 12, 0, 655370, 13, 0, 655371, 13, 0, 655372, 13, 0, 655373, 13, 0, 655374, 13, 0, 655375, 11, 0, 655376, 13, 0, 655377, 13, 0, 655378, 13, 0, 655379, 13, 0, 655380, 12, 0, 655381, 13, 0, 720896, 13, 0, 720897, 13, 0, 720898, 11, 0, 720899, 13, 0, 720900, 13, 0, 720901, 13, 0, 720902, 13, 0, 720903, 11, 0, 720904, 13, 0, 720905, 13, 0, 720906, 13, 0, 720907, 11, 0, 720908, 13, 0, 720909, 13, 0, 720910, 12, 0, 720911, 13, 0, 720912, 13, 0, 720913, 13, 0, 720914, 12, 0, 720915, 13, 0, 720916, 13, 0, 720917, 13, 0, 786432, 13, 0, 786433, 13, 0, 786434, 13, 0, 786435, 13, 0, 786436, 13, 0, 786437, 13, 0, 786438, 13, 0, 786439, 13, 0, 786440, 13, 0, 786441, 13, 0, 786442, 13, 0, 786443, 13, 0, 786444, 13, 0, 786445, 13, 0, 786446, 13, 0, 786447, 13, 0, 786448, 13, 0, 786449, 13, 0, 786450, 13, 0, 786451, 13, 0, 786452, 13, 0, 786453, 13, 0 )
+
+[node name="Attack" type="Button" parent="."]
 anchor_top = -4.268
 anchor_bottom = -4.268
-margin_left = 45.0
-margin_top = 524.82
-margin_right = 228.0
-margin_bottom = 577.82
+margin_left = 41.0
+margin_top = 509.0
+margin_right = 224.0
+margin_bottom = 562.0
 text = "Atacar"
 
-[node name="Run" type="Button" parent="AtacksMenu"]
-anchor_top = -4.232
-anchor_bottom = -4.232
-margin_left = 798.0
-margin_top = 516.68
-margin_right = 981.0
-margin_bottom = 569.68
-text = "Fugir"
-
-[node name="Background" type="ColorRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 485.0
-color = Color( 0.501961, 0.819608, 0.960784, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 804, 326 )
-
 [node name="Robot" parent="." instance=ExtResource( 1 )]
-position = Vector2( 242, 324 )
+position = Vector2( 218, 337 )
 
-[connection signal="pressed" from="AtacksMenu/Attack" to="." method="_on_Attack_pressed"]
+[node name="Enemy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 849, 338 )
+
+[connection signal="pressed" from="Attack" to="." method="_on_Attack_pressed"]

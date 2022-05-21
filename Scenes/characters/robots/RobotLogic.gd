@@ -7,11 +7,11 @@ var currentLvl
 var levels := {
 	1: {
 		"life": 100,
-		"damage": 25		
+		"damage": 25
 	},
 	2: {
 		"life": 150,
-		"damage": 30		
+		"damage": 30
 	}
 }
 
@@ -20,6 +20,7 @@ var isMyTurn := false
 
 onready var animationPlayer := $AnimationPlayer
 onready var turnArrow := $TurnArrow
+onready var robotSprite = get_node("RobotSprite")
 
 func _ready() -> void:
 	turnArrow.visible = false
