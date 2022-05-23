@@ -86,7 +86,6 @@
 3/z_index = 0
 
 [node name="TileMap" type="TileMap"]
-modulate = Color( 0.556863, 0.556863, 0.556863, 1 )
 scale = Vector2( 2, 2 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
