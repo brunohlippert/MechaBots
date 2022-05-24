@@ -23,7 +23,7 @@ func get_input():
 		sprite.frame = 0
 		
 	return d
-		
+	
 func _physics_process(delta):
 	move8way(get_input().normalized(), delta)
 

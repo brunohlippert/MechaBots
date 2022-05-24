@@ -1,11 +1,12 @@
 extends Node
 
+var firstBattle = true
 # Index do robo na bag
 var robotForBattle = 0
 
 var bag = [
 	{
-		"robot": "garry",
+		"name": "garry",
 		"lvl": 1
 	}
 ]
