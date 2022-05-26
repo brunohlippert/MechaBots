@@ -61,3 +61,5 @@ valign = 1
 
 [node name="Stats" parent="." instance=ExtResource( 3 )]
 position = Vector2( 96, 141 )
+
+[connection signal="gui_input" from="." to="." method="_on_Slot_gui_input"]

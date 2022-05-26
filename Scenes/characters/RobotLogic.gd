@@ -2,7 +2,10 @@ extends KinematicBody2D
 
 var currentLvl: int
 var isEnemy: bool
+
 var life: int
+var damage: int
+var special: int
 
 var isGettingDamage := false
 var isMyTurn := false
@@ -21,7 +24,10 @@ func init(robot: String, lvl: int, statsVisible=false, _isEnemy=false):
 	
 	isEnemy = _isEnemy
 	currentLvl = lvl
+	
 	life = robotConfig["life"]
+	damage = robotConfig["damage"]
+	special = robotConfig["special"]
 	
 	$Stats.setInitialStats(robotConfig)
 	robotSprite = get_node("sprites/"+robot)
@@ -40,6 +46,7 @@ func getDamage(dam: int):
 	isGettingDamage = true;
 	animationPlayer.play("damage")
 	life -= dam
+	$Stats.updateLife(life)
 
 func finishGettingDamage():
 	isGettingDamage = false
