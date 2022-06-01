@@ -69,12 +69,12 @@ const robots = {
 			1: {
 				"damage": 15,
 				"special": 40,
-				"life": 110
+				"life": 130
 			},
 			2: {
 				"damage": 25,
 				"special": 70,
-				"life": 140
+				"life": 160
 			},
 			3: {
 				"damage": 40,
