@@ -31,4 +31,5 @@ func pickRandomEnemy():
 
 func robotSelected(index: int):
 	State.robotForBattle = index
+	
 	get_tree().change_scene("res://Scenes/map/Batalha.tscn")

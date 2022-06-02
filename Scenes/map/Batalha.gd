@@ -1,10 +1,16 @@
 extends Node2D
 
 var specialTimeout := 2
+var enemy: Dictionary
 
 func _ready() -> void:
+	# Reseta controle de pos batalha
+	State.isRobotForBattleLvlUp = false
+	State.isNewRobotAdded = false
+	
 	var robot = State.bag[State.robotForBattle]
-	var enemy = State.enemyForBattle
+	enemy = State.enemyForBattle
+	
 	$Robot.init(robot["name"], robot["lvl"], true)
 	$Enemy.init(enemy["name"], enemy["lvl"], true, true)
 	
@@ -46,8 +52,12 @@ func _process(delta: float) -> void:
 			$Special.disabled = false
 
 func checkBattleEnded():
-	if($Enemy.life <= 0 || $Robot.life <= 0):
+	if $Enemy.life <= 0:
+		State.handleVitoria(enemy)
 		get_tree().change_scene("res://Scenes/map/Map.tscn")
+	if $Robot.life <= 0:
+		get_tree().change_scene("res://Scenes/map/Map.tscn")
+
 
 func disabledButtonStates(newState: bool):
 	$Attack.disabled = newState;
