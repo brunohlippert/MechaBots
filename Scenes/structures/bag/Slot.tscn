@@ -41,6 +41,8 @@ script = ExtResource( 4 )
 
 [node name="Robot" parent="." instance=ExtResource( 2 )]
 position = Vector2( 104, 80 )
+collision_layer = 0
+collision_mask = 0
 
 [node name="lvl" type="Panel" parent="."]
 margin_left = 104.0

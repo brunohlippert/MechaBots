@@ -53,6 +53,7 @@ func _process(delta: float) -> void:
 
 func checkBattleEnded():
 	if $Enemy.life <= 0:
+		State.firstBattle = false
 		State.handleVitoria(enemy)
 		get_tree().change_scene("res://Scenes/map/Map.tscn")
 	if $Robot.life <= 0:

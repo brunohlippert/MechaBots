@@ -9,6 +9,8 @@ func _ready():
 	rng.randomize()
 	pickRandomEnemy()
 	connectSlots()
+	
+	$RunButton.visible = not State.firstBattle
 
 func connectSlots():
 	$Bag/Slot0.connect("slot_bag_cliked", self, "robotSelected")
@@ -33,3 +35,7 @@ func robotSelected(index: int):
 	State.robotForBattle = index
 	
 	get_tree().change_scene("res://Scenes/map/Batalha.tscn")
+
+
+func _on_TextureButton_pressed():
+	get_tree().change_scene("res://Scenes/map/Map.tscn")

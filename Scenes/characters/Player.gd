@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var SPEED = 250
+export var SPEED = 12000
 var velocity = Vector2()
 onready var sprite := $AnimatedSprite
 
@@ -25,8 +25,11 @@ func get_input():
 	return d
 	
 func _physics_process(delta):
-	move8way(get_input().normalized(), delta)
+	if State.playerCanMove:
+		move8way(get_input().normalized(), delta)
+	else:
+		sprite.stop()
 
 func move8way(input: Vector2, delta: float) -> void:
-	position += input * SPEED * delta
-	
+	move_and_slide(input * SPEED * delta)
+	State.playerPositionOnMap = self.position

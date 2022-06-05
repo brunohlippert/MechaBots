@@ -1,7 +1,12 @@
 extends Node
 
+# Posicao inicial do jogador. Controla onde ele deve voltar no mapa depois da batalha
+var playerPositionOnMap = Vector2(266, 374)
+
 # Define o primeiro inimigo statico
 var firstBattle = true
+
+var playerCanMove = true
 
 # Controle de pos batalha
 var isRobotForBattleLvlUp = false
