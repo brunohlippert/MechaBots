@@ -3,7 +3,11 @@ extends Node2D
 var specialTimeout := 2
 var enemy: Dictionary
 
+var rng = RandomNumberGenerator.new()
+
 func _ready() -> void:
+	rng.randomize()
+	
 	# Reseta controle de pos batalha
 	State.isRobotForBattleLvlUp = false
 	State.isNewRobotAdded = false
@@ -20,7 +24,8 @@ func _ready() -> void:
 
 func _on_Attack_pressed() -> void:
 	disabledButtonStates(true)
-	$Enemy.getDamage($Robot.damage)  
+	var modifiedDamage = getDamageModified($Robot.damage, false)
+	$Enemy.getDamage(modifiedDamage)  
 	$Robot.setMyTurn(false)
 	
 	specialTimeout = specialTimeout - 1 if specialTimeout > 0 else 0
@@ -28,7 +33,8 @@ func _on_Attack_pressed() -> void:
 
 func _on_Special_pressed() -> void:
 	disabledButtonStates(true)
-	$Enemy.getDamage($Robot.special)  
+	var modifiedDamage = getDamageModified($Robot.special, false)
+	$Enemy.getDamage(modifiedDamage)  
 	$Robot.setMyTurn(false)
 	
 	specialTimeout = 2
@@ -41,7 +47,8 @@ func _process(delta: float) -> void:
 	
 	# Vez do inimigo
 	if $Enemy.isMyTurn and not $Enemy.isGettingDamage:
-		$Robot.getDamage($Enemy.damage)
+		var modifiedDamage = getDamageModified($Enemy.damage, false)
+		$Robot.getDamage(modifiedDamage)
 		$Enemy.setMyTurn(false)
 		
 	if $Robot.isMyTurn:
@@ -63,3 +70,9 @@ func checkBattleEnded():
 func disabledButtonStates(newState: bool):
 	$Attack.disabled = newState;
 	$Special.disabled = newState;
+	
+func getDamageModified(damage: float, isSpecial: bool):
+	var damageModifier = 5 if not isSpecial else 10
+	var newDamage = rng.randi_range(damage - damageModifier, damage + damageModifier)
+	
+	return newDamage

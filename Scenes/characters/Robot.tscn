@@ -10,24 +10,12 @@
 [sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("sprites/cannon:position")
+tracks/0/path = NodePath("sprites:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("sprites:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -91,7 +79,6 @@ position = Vector2( -8, -80 )
 [node name="sprites" type="Node2D" parent="."]
 
 [node name="fighter" type="Sprite" parent="sprites"]
-visible = false
 modulate = Color( 0.556863, 0.556863, 0.556863, 1 )
 position = Vector2( -1.90735e-06, -1.90735e-06 )
 scale = Vector2( 0.657895, 0.657895 )
