@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/characters/RobotLogic.gd" type="Script" id=1]
 [ext_resource path="res://assets/robots/cannon.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/robots/fighter.png" type="Texture" id=4]
 [ext_resource path="res://assets/robots/garry.png" type="Texture" id=5]
 [ext_resource path="res://assets/robots/stronk.png" type="Texture" id=6]
+[ext_resource path="res://assets/hit - yellow.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -50,9 +51,114 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 26, 0 ), Vector2( -26, 0 ), Vector2( 50, 0 ), Vector2( -50, 0 ), Vector2( 0, 0 ) ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "playSparks"
+}, {
+"args": [  ],
+"method": "resetSparks"
+} ]
+}
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 47, 50 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1024, 0, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2048, 0, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3072, 0, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 1024, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1024, 1024, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2048, 1024, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3072, 1024, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 2048, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1024, 2048, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2048, 2048, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3072, 2048, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 3072, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1024, 3072, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2048, 3072, 1024, 1024 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 3072, 3072, 1024, 1024 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": false,
+"name": "default",
+"speed": 20.0
+} ]
 
 [node name="Robot" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -103,3 +209,8 @@ modulate = Color( 0.556863, 0.556863, 0.556863, 1 )
 position = Vector2( -8, -3.8147e-06 )
 scale = Vector2( 0.605263, 0.605263 )
 texture = ExtResource( 6 )
+
+[node name="Sparks" type="AnimatedSprite" parent="."]
+position = Vector2( 9, 3.8147e-06 )
+scale = Vector2( 0.251343, 0.251343 )
+frames = SubResource( 21 )

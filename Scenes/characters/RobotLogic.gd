@@ -51,3 +51,10 @@ func getDamage(dam: int):
 func finishGettingDamage():
 	isGettingDamage = false
 	setMyTurn(true)
+
+func playSparks():
+	$Sparks.play()
+	
+func resetSparks():
+	$Sparks.stop()
+	$Sparks.frame = 0
