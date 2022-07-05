@@ -82,5 +82,15 @@ const robots = {
 				"life": 190
 			}
 		}
+	},
+	"boss": {
+		"sprite": "res://assets/robots/boss.png",
+		"lvls": {
+			1: {
+				"damage": 50,
+				"special": 80,
+				"life": 300
+			}
+		}
 	}
 }

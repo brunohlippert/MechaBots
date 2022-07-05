@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/structures/Entulho.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/characters/Player.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/robots/stronk.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/structures/Bau.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/structures/Mine.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/map.ogg" type="AudioStream" id=16]
 
 [node name="Map" type="Node2D"]
 script = ExtResource( 5 )
@@ -87,61 +88,61 @@ position = Vector2( 2558, 641 )
 position = Vector2( 2576, 682 )
 
 [node name="Entulho19" parent="Entulhos" instance=ExtResource( 1 )]
-position = Vector2( 2120, 1049 )
+position = Vector2( 2783, 942 )
 
 [node name="Entulho20" parent="Entulhos" instance=ExtResource( 1 )]
-position = Vector2( 2113, 1100 )
+position = Vector2( 2744, 977 )
 
 [node name="Entulho21" parent="Entulhos" instance=ExtResource( 1 )]
-position = Vector2( 1898, 1123 )
+position = Vector2( 2704, 1006 )
 
 [node name="Entulho22" parent="Entulhos" instance=ExtResource( 1 )]
-position = Vector2( 1925, 1077 )
+position = Vector2( 2763, 1027 )
 
-[node name="Entulho2" parent="Entulhos/Entulho22" instance=ExtResource( 1 )]
-position = Vector2( 998, -21 )
+[node name="Entulho23" parent="Entulhos" instance=ExtResource( 1 )]
+position = Vector2( 2811, 991 )
 
-[node name="Entulho3" parent="Entulhos/Entulho22" instance=ExtResource( 1 )]
-position = Vector2( 1032, 15 )
+[node name="Entulho24" parent="Entulhos" instance=ExtResource( 1 )]
+position = Vector2( 2610, 1253 )
 
-[node name="Entulho4" parent="Entulhos/Entulho22" instance=ExtResource( 1 )]
-position = Vector2( 968, 18 )
+[node name="Entulho25" parent="Entulhos" instance=ExtResource( 1 )]
+position = Vector2( 2558, 1243 )
 
-[node name="Entulho5" parent="Entulhos/Entulho22" instance=ExtResource( 1 )]
-position = Vector2( 1030, 60 )
+[node name="Entulho26" parent="Entulhos" instance=ExtResource( 1 )]
+position = Vector2( 2565, 1285 )
 
-[node name="Entulho6" parent="Entulhos/Entulho22" instance=ExtResource( 1 )]
-position = Vector2( 968, 64 )
+[node name="Entulho27" parent="Entulhos" instance=ExtResource( 1 )]
+position = Vector2( 2416, 1795 )
 
-[node name="Entulho7" parent="Entulhos/Entulho22" instance=ExtResource( 1 )]
-position = Vector2( 1019, -250 )
+[node name="Entulho28" parent="Entulhos" instance=ExtResource( 1 )]
+position = Vector2( 2450, 1827 )
 
-[node name="Entulho8" parent="Entulhos/Entulho22" instance=ExtResource( 1 )]
-position = Vector2( 971, -223 )
+[node name="Entulho29" parent="Entulhos" instance=ExtResource( 1 )]
+position = Vector2( 2469, 1774 )
 
-[node name="Entulho9" parent="Entulhos/Entulho22" instance=ExtResource( 1 )]
-position = Vector2( 161, 570 )
+[node name="Entulho30" parent="Entulhos" instance=ExtResource( 1 )]
+position = Vector2( 2544, 1816 )
 
-[node name="Entulho10" parent="Entulhos/Entulho22" instance=ExtResource( 1 )]
-position = Vector2( 150, 634 )
+[node name="Entulho31" parent="Entulhos" instance=ExtResource( 1 )]
+position = Vector2( 3214, 1364 )
 
-[node name="Entulho11" parent="Entulhos/Entulho22" instance=ExtResource( 1 )]
-position = Vector2( 911, 870 )
+[node name="Entulho32" parent="Entulhos" instance=ExtResource( 1 )]
+position = Vector2( 3248, 1410 )
 
-[node name="Entulho12" parent="Entulhos/Entulho22" instance=ExtResource( 1 )]
-position = Vector2( 849, 868 )
+[node name="Entulho33" parent="Entulhos" instance=ExtResource( 1 )]
+position = Vector2( 3184, 1410 )
 
-[node name="Entulho13" parent="Entulhos/Entulho22" instance=ExtResource( 1 )]
-position = Vector2( 968, 836 )
+[node name="Entulho34" parent="Entulhos" instance=ExtResource( 1 )]
+position = Vector2( 2270, 840 )
 
-[node name="Entulho16" parent="Entulhos/Entulho22" instance=ExtResource( 1 )]
-position = Vector2( 1252, 305 )
+[node name="Entulho35" parent="Entulhos" instance=ExtResource( 1 )]
+position = Vector2( 2316, 874 )
 
-[node name="Entulho17" parent="Entulhos/Entulho22" instance=ExtResource( 1 )]
-position = Vector2( 1262, 354 )
+[node name="Entulho36" parent="Entulhos" instance=ExtResource( 1 )]
+position = Vector2( 2177, 1611 )
 
-[node name="Entulho18" parent="Entulhos/Entulho22" instance=ExtResource( 1 )]
-position = Vector2( 1211, 335 )
+[node name="Entulho37" parent="Entulhos" instance=ExtResource( 1 )]
+position = Vector2( 2141, 1649 )
 
 [node name="Placas" type="Node2D" parent="."]
 
@@ -150,6 +151,11 @@ position = Vector2( 1006, 234 )
 
 [node name="Label" parent="Placas/Placa" index="0"]
 text = "vila"
+
+[node name="Mine" parent="." instance=ExtResource( 15 )]
+modulate = Color( 1, 0.823529, 0.635294, 1 )
+position = Vector2( 2773, 1506 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 266, 374 )
@@ -194,55 +200,50 @@ texture = ExtResource( 11 )
 
 [node name="Fire" parent="Fogos" instance=ExtResource( 8 )]
 position = Vector2( 38, 522 )
-frame = 7
+frame = 39
 
 [node name="Fire2" parent="Fogos" instance=ExtResource( 8 )]
 position = Vector2( 74, 562 )
-frame = 57
+frame = 29
 
 [node name="Fire3" parent="Fogos" instance=ExtResource( 8 )]
 position = Vector2( 118, 559 )
-frame = 14
 
 [node name="Fire4" parent="Fogos" instance=ExtResource( 8 )]
 position = Vector2( 151, 600 )
-frame = 32
+frame = 4
 
 [node name="Fire5" parent="Fogos" instance=ExtResource( 8 )]
 position = Vector2( 1707, 384 )
-frame = 53
+frame = 25
 
 [node name="Fire6" parent="Fogos" instance=ExtResource( 8 )]
 position = Vector2( 1679, 383 )
-frame = 17
+frame = 49
 
 [node name="Fire7" parent="Fogos" instance=ExtResource( 8 )]
 position = Vector2( 2563, 417 )
-frame = 24
+frame = 56
 
 [node name="Fire8" parent="Fogos" instance=ExtResource( 8 )]
 position = Vector2( 2822, 752 )
-frame = 11
+frame = 43
 
 [node name="Fire9" parent="Fogos" instance=ExtResource( 8 )]
 position = Vector2( 2867, 781 )
-frame = 3
-
-[node name="Fire10" parent="Fogos" instance=ExtResource( 8 )]
-position = Vector2( 2004, 981 )
-frame = 17
+frame = 35
 
 [node name="Fire11" parent="Fogos" instance=ExtResource( 8 )]
 position = Vector2( 2235, 1461 )
-frame = 52
+frame = 24
 
 [node name="Fire12" parent="Fogos" instance=ExtResource( 8 )]
 position = Vector2( 2197, 1509 )
-frame = 30
+frame = 2
 
 [node name="Fire13" parent="Fogos" instance=ExtResource( 8 )]
 position = Vector2( 2237, 1523 )
-frame = 23
+frame = 55
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -262,16 +263,36 @@ scale = Vector2( 0.411932, 0.465461 )
 texture = ExtResource( 13 )
 
 [node name="Cannon" type="Sprite" parent="Enemies/Stronk"]
-position = Vector2( 186.924, 83.7877 )
+position = Vector2( 245.186, 105.272 )
 texture = ExtResource( 12 )
 
 [node name="Bau" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1681, 595 )
 
-[node name="Mine" parent="." instance=ExtResource( 15 )]
-modulate = Color( 1, 0.823529, 0.635294, 1 )
-position = Vector2( 2773, 1506 )
-scale = Vector2( 0.5, 0.5 )
+[node name="BarreiraBau" type="Node2D" parent="."]
+
+[node name="Car2" type="Sprite" parent="BarreiraBau"]
+position = Vector2( 2149, 1119 )
+rotation = -1.28631
+scale = Vector2( 0.1934, 0.188281 )
+texture = ExtResource( 11 )
+
+[node name="Fire10" parent="BarreiraBau" instance=ExtResource( 8 )]
+position = Vector2( 2118, 1169 )
+frame = 3
+
+[node name="Fire14" parent="BarreiraBau" instance=ExtResource( 8 )]
+position = Vector2( 2131, 1098 )
+frame = 49
+
+[node name="Fire15" parent="BarreiraBau" instance=ExtResource( 8 )]
+position = Vector2( 2154, 1030 )
+frame = 39
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -12.201
+autoplay = true
 
 [connection signal="pressed" from="HudLayer/HUD/bagButton" to="." method="_on_bagButton_pressed"]
 

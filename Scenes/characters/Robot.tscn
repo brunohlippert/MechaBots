@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/characters/RobotLogic.gd" type="Script" id=1]
 [ext_resource path="res://assets/robots/cannon.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/robots/garry.png" type="Texture" id=5]
 [ext_resource path="res://assets/robots/stronk.png" type="Texture" id=6]
 [ext_resource path="res://assets/hit - yellow.png" type="Texture" id=7]
+[ext_resource path="res://assets/robots/boss.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -185,6 +186,7 @@ position = Vector2( -8, -80 )
 [node name="sprites" type="Node2D" parent="."]
 
 [node name="fighter" type="Sprite" parent="sprites"]
+visible = false
 modulate = Color( 0.556863, 0.556863, 0.556863, 1 )
 position = Vector2( -1.90735e-06, -1.90735e-06 )
 scale = Vector2( 0.657895, 0.657895 )
@@ -209,6 +211,12 @@ modulate = Color( 0.556863, 0.556863, 0.556863, 1 )
 position = Vector2( -8, -3.8147e-06 )
 scale = Vector2( 0.605263, 0.605263 )
 texture = ExtResource( 6 )
+
+[node name="boss" type="Sprite" parent="sprites"]
+visible = false
+position = Vector2( -8, -4.76837e-07 )
+scale = Vector2( 0.21371, 0.21371 )
+texture = ExtResource( 8 )
 
 [node name="Sparks" type="AnimatedSprite" parent="."]
 position = Vector2( 9, 3.8147e-06 )

@@ -30,6 +30,9 @@ func init(robot: String, lvl: int, statsVisible=false, _isEnemy=false):
 	special = robotConfig["special"]
 	
 	$Stats.setInitialStats(robotConfig)
+	for rob in get_node("sprites").get_children():
+		rob.visible = false
+	
 	robotSprite = get_node("sprites/"+robot)
 	
 	if isEnemy:

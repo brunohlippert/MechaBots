@@ -3,6 +3,8 @@ extends Node2D
 var specialTimeout := 2
 var enemy: Dictionary
 
+var currentRobotBossFight = 0
+
 var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
@@ -12,14 +14,21 @@ func _ready() -> void:
 	State.isRobotForBattleLvlUp = false
 	State.isNewRobotAdded = false
 	
-	var robot = State.bag[State.robotForBattle]
-	enemy = State.enemyForBattle
-	
-	$Robot.init(robot["name"], robot["lvl"], true)
-	$Enemy.init(enemy["name"], enemy["lvl"], true, true)
-	
-	$Robot.setMyTurn(true)
-	
+	if State.bossBattle:
+		State.playerPositionOnMap = Vector2(2650, 1500)
+		var robot = State.bag[currentRobotBossFight]
+		
+		$Robot.init(robot["name"], robot["lvl"], true)
+		$Enemy.init("boss", 1, true)
+		
+	else:
+		var robot = State.bag[State.robotForBattle]
+		enemy = State.enemyForBattle
+		
+		$Robot.init(robot["name"], robot["lvl"], true)
+		$Enemy.init(enemy["name"], enemy["lvl"], true, true)
+		
+	$Robot.setMyTurn(true)	
 	$Special/timeout.text = str(specialTimeout)
 
 func _on_Attack_pressed() -> void:
@@ -62,9 +71,26 @@ func checkBattleEnded():
 	if $Enemy.life <= 0:
 		State.firstBattle = false
 		State.handleVitoria(enemy)
+		
+		
+		
 		get_tree().change_scene("res://Scenes/map/Map.tscn")
 	if $Robot.life <= 0:
-		get_tree().change_scene("res://Scenes/map/Map.tscn")
+		if State.bossBattle:
+			currentRobotBossFight += 1
+			
+			if currentRobotBossFight < len(State.bag):
+				var robot = State.bag[currentRobotBossFight]
+		
+				$Robot.init(robot["name"], robot["lvl"], true)
+				$Robot.setMyTurn(true)	
+				specialTimeout = 2
+				$Special/timeout.text = str(specialTimeout)
+			else:
+				State.bossBattle = false
+				get_tree().change_scene("res://Scenes/map/Map.tscn")
+		else:
+			get_tree().change_scene("res://Scenes/map/Map.tscn")
 
 
 func disabledButtonStates(newState: bool):

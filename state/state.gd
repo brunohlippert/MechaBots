@@ -8,6 +8,10 @@ var firstBattle = true
 
 var playerCanMove = true
 
+var bossBattle = false
+
+var playerWinBossBattle = false
+
 # Controle de pos batalha
 var isRobotForBattleLvlUp = false
 var isNewRobotAdded = false
@@ -30,20 +34,24 @@ var bag = [
 ]
 
 func handleVitoria(enemy: Dictionary):
-	firstBattle = false
-	
-	if bag[robotForBattle]["lvl"] < 3:
-		isRobotForBattleLvlUp = true
-		bag[robotForBattle]["lvl"] += 1
-	
-	var robotIndex = getRobotIndexInBag(enemy)
-	
-	if robotIndex == -1 and len(bag) < BAG_MAX_SLOTS:
-		isNewRobotAdded = true
-		bag.push_back({
-			"name": enemy["name"],
-			"lvl": enemy["lvl"]
-		})
+	if State.bossBattle:
+		State.bossBattle = false
+		State.playerWinBossBattle = true
+	else:
+		firstBattle = false
+		
+		if bag[robotForBattle]["lvl"] < 3:
+			isRobotForBattleLvlUp = true
+			bag[robotForBattle]["lvl"] += 1
+		
+		var robotIndex = getRobotIndexInBag(enemy)
+		
+		if robotIndex == -1 and len(bag) < BAG_MAX_SLOTS:
+			isNewRobotAdded = true
+			bag.push_back({
+				"name": enemy["name"],
+				"lvl": enemy["lvl"]
+			})
 	
 func getRobotIndexInBag(robotCheck: Dictionary) -> int:
 	for i in range(len(bag)):
